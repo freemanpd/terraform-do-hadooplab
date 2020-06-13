@@ -1,10 +1,11 @@
-SHELL = /bin/sh
+.PHONY: apply
+apply:
+	@echo "🛎 generating ssh keys"
+	@ssh-keygen -b 2048 -t rsa -f hadooplab_private_key -q -N "" <<< y
+	@echo "🛎 running terraform apply"
+	@terraform apply
 
-build:
-   terraform provision
-
+.PHONY: destroy
 destroy:
-   terraform destroy
-
-provision:
-   ansible-playbook --limit hadoop -u centos ansible/plays/hadoop.yaml -b root
+	@rm -rf hadooplab_private_key*
+	@terraform destroy

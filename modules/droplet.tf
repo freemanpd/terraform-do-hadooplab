@@ -1,7 +1,6 @@
 resource "digitalocean_ssh_key" "default" {
-  name       = "Hadooplab public key"
-  public_key = file("~/.ssh/id_rsa.pub")
-
+  name       = "hadooplab"
+  public_key = file("${var.ssh_public_key_path}hadooplab_private_key.pub")
 }
 
 // Droplet
@@ -15,7 +14,7 @@ resource "digitalocean_droplet" "droplet" {
   backups            = var.backups
   monitoring         = var.monitoring
   private_networking = var.private_networking
-  ssh_keys = [digitalocean_ssh_key.default.fingerprint]
+  ssh_keys           = [digitalocean_ssh_key.default.id]
 }
 
 // Create Volume

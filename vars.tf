@@ -60,6 +60,27 @@ variable "DIGITALOCEAN_ACCESS_TOKEN" {
   default = ""
 }
 
+variable "SPACES_ACCESS_KEY_ID" {
+  default = ""
+}
+
+
+variable "ssh_public_key_path" {
+  default = "./"
+}
+
+variable "ssh_key_algorithm" {
+  default = "ECDSA"
+}
+
+variable "ssh_key_ecdsa_curve" {
+  default = "P384"
+}
+
+variable "SPACES_SECRET_ACCESS_KEY" {
+  default = ""
+}
+
 variable "user_data" {
   default = ""
 }
