@@ -11,5 +11,4 @@
 # .pre-commit-terraform
 .pre-commit-config.yaml
 
-hadooplab_public_key.pem
-hadooplab_private_key.pem
+hadooplab_private_key*
