@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 SSH_KEY_APPLY () {
 
