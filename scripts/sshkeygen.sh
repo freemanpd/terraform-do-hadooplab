@@ -6,7 +6,7 @@ SSH_KEY_APPLY () {
 FILE=../hadooplab_private_key
     
     if test -f "$FILE"; then
-        echo "$FILE exists. not creating. run make recreate"
+        echo "$FILE exists. not creating. run make rebuild"
         else
         ssh-keygen -b 2048 -t rsa -f ../hadooplab_private_key -q -N "" <<< y
     fi
@@ -28,7 +28,7 @@ case "$1" in
     SSH_KEY_DESTROY
     ;;
     
-    recreate)
+    rebuild)
     SSH_KEY_DESTROY
     SH_KEY_APPLY
     ;;

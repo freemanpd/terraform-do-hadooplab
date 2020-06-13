@@ -19,6 +19,9 @@ resource "digitalocean_droplet" "droplet" {
     command = "mkdir -p ../ansible; git clone git@github.com:freemanpd/cloudera-playbook.git ../ansible"
   }
   provisioner "local-exec" {
+    command = "echo ansible"
+  }
+  provisioner "local-exec" {
     when    = "destroy"
     command = "rm -rf ../ansible"
   }
