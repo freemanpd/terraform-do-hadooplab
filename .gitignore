@@ -12,3 +12,5 @@
 .pre-commit-config.yaml
 
 hadooplab_private_key*
+
+ansible*

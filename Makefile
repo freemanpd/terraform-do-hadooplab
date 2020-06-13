@@ -8,4 +8,5 @@ apply:
 .PHONY: destroy
 destroy:
 	@sh ./scripts/sshkeygen.sh destroy
+	@rm -rf ansible/*
 	@terraform destroy

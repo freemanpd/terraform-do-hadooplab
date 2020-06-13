@@ -15,6 +15,13 @@ resource "digitalocean_droplet" "droplet" {
   monitoring         = var.monitoring
   private_networking = var.private_networking
   ssh_keys           = [digitalocean_ssh_key.default.id]
+  provisioner "local-exec" {
+    command = "mkdir -p ../ansible; git clone git@github.com:freemanpd/cloudera-playbook.git ../ansible"
+  }
+  provisioner "local-exec" {
+    when    = "destroy"
+    command = "rm -rf ../ansible"
+  }
 }
 
 // Create Volume
