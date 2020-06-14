@@ -5,7 +5,7 @@ SSH_KEY_APPLY () {
 
 FILE=../hadooplab_private_key
     
-    if test -f "$FILE"; then
+    if [ -e "$FILE" ]; then
         echo "$FILE exists. not creating. run make rebuild"
         else
         ssh-keygen -b 2048 -t rsa -f ../hadooplab_private_key -q -N "" <<< y
