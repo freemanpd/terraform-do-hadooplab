@@ -11,6 +11,6 @@ destroy:
 	@terraform destroy
 
 provision:
-	@ansible
+	@ansible-playbook -i ~/ansible_hosts cloudera-playbook/site.yml
 
 rebuild: destroy apply
